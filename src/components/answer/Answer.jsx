@@ -1,17 +1,36 @@
-import { data } from "../data";
-import styles from './Answer.module.css'
+import { useState } from "react";
+import './answer.css'
 
+const Answer = ({ currentQuestion, setStop }) => {
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [myClassName, setMyClassName] = useState("answerDiv");
 
-const Answer = () => {
+  const handleClick = (e) => {
+    setSelectedAnswer(e);
+    setMyClassName("answerDiv active");
+    setTimeout(() => {
+      setMyClassName(e.correct ? 'answerDiv correct' :  'answerDiv wrong' )
+    }, 3000);
+  };
+
   return (
-    <div>
-      <div className={styles.answersDiv}>
-        <div className={styles.answerDiv}>
-          sadasd
+    <div className='answersDiv'>
+      {currentQuestion.answers?.map((eachAnswer, index) => (
+        // <div key={index} className={styles.answerDiv} onClick={() => handleClick(eachAnswer)}>
+        <div
+          key={index}
+          onClick={() => handleClick(eachAnswer)}
+          className={
+            selectedAnswer === eachAnswer
+              ? myClassName
+              : 'answerDiv'
+          }
+        >
+          {eachAnswer.text}
         </div>
-      </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default Answer
+export default Answer;
