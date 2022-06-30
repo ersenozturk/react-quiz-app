@@ -1,10 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import './answer.css'
+import useSound from "use-sound";
+import play from '../../assets/sounds_play.wav';
+import correct from '../../assets/sounds_correct.wav';
+import wrong from '../../assets/sounds_wrong.wav';
 
 const Answer = ({ currentQuestion, setStop, setQuestionNumber }) => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [myClassName, setMyClassName] = useState("answerDiv");
 
+  // sounds
+  const [letsPlay] = useSound(play);
+  const [correctAnswer] = useSound(correct);
+  const [wrongAnswer] = useSound(wrong);
+
+// sounds logic
+  useEffect(() => {
+    letsPlay();
+  }, [letsPlay]);
+
+  // answer logic
   const delay = (myCallBack, duration) => {
     setTimeout(() => {
       myCallBack()
@@ -17,9 +32,11 @@ const Answer = ({ currentQuestion, setStop, setQuestionNumber }) => {
     delay(() => setMyClassName(e.correct ? 'answerDiv correct' :  'answerDiv wrong'), 3000)
     delay(()=>{
       if (e.correct) {
+        correctAnswer()
         setQuestionNumber((prevQuestionNum) => prevQuestionNum + 1 )
         setSelectedAnswer(null)
       } else {
+        wrongAnswer()
         setStop(true)
       }
     }, 6000)
