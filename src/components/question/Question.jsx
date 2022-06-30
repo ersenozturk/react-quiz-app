@@ -1,8 +1,11 @@
-import React from 'react'
+import { data } from "../data";
+import styles from './Question.module.css'
 
 const Question = () => {
   return (
-    <div>Question</div>
+    <div className={styles.questionDiv}>
+      <p>sadasasasasasasasasas</p>
+    </div>
   )
 }
 

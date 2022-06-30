@@ -3,9 +3,10 @@ import Timer from "../timer/Timer";
 import Question from "../question/Question";
 import Answer from "../answer/Answer";
 import styles from "./Main.module.css";
-import { moneyList } from "../data";
+import { moneyList, data } from "../data";
 
 const Main = () => {
+  const {id, question} = data
   return (
     <div className={styles.wrapper}>
       <main className={styles.main}>
@@ -21,6 +22,7 @@ const Main = () => {
         <ul className={styles.moneyItemUl}>
           {moneyList.map((eachMoneyItem) => (
             <li className={styles.moneyItemLi} key={eachMoneyItem.id}>
+            {/* // <li className={`${styles.moneyItemLi} ${styles.active}`} key={eachMoneyItem.id}> */}
               <p className={styles.moneyItemLiNumber}>
                 {eachMoneyItem.id}
               </p>{" "}
