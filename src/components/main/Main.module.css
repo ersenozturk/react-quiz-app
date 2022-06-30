@@ -67,3 +67,30 @@
     font-size: 20px;
     font-weight: 300;
 }
+
+/* earn style */
+
+.earn {
+    position: relative;
+    top: 0;bottom: 0;left: 0;right: 0;margin: auto;
+}
+
+.mainBtnParentDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.mainBtn {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    border: none;
+    border-radius: 10px;
+    color: black;
+    background-color: aliceblue;
+    padding: 10px;
+    cursor: pointer;
+
+}

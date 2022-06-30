@@ -16,7 +16,7 @@ const Question = ({ setQuestionNumber, setStop, questionNumber }) => {
       <div className={styles.questionDiv}>
             {currentQuestion?.question}
       </div>
-      <Answer currentQuestion={currentQuestion} setStop={setStop} />
+      <Answer currentQuestion={currentQuestion} setStop={setStop} setQuestionNumber={setQuestionNumber} />
     </>
   );
 };
