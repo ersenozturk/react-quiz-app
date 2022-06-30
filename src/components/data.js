@@ -83,4 +83,4 @@ export const moneyList = [
   { id: 13, amount: "$ 250.000" },
   { id: 14, amount: "$ 500.000" },
   { id: 15, amount: "$ 1.000.000" },
-]
+].reverse()
