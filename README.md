@@ -1,11 +1,12 @@
 # Link
-    You can review the app I deployed via netflify with the link below.
-    https://millionaire-ersenozturk.netlify.app/
+You can review the app I deployed via netflify with the link below.  
+
+https://millionaire-ersenozturk.netlify.app/
 
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-https://millionaire-ersenozturk.netlify.app/
+
 
 ## Available Scripts
 
