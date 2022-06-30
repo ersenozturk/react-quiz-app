@@ -33,13 +33,17 @@ const Answer = ({ currentQuestion, setStop, setQuestionNumber }) => {
     delay(()=>{
       if (e.correct) {
         correctAnswer()
-        setQuestionNumber((prevQuestionNum) => prevQuestionNum + 1 )
-        setSelectedAnswer(null)
+        delay(()=>{
+          setQuestionNumber((prevQuestionNum) => prevQuestionNum + 1 )
+          setSelectedAnswer(null)
+        },1000)
       } else {
         wrongAnswer()
-        setStop(true)
+        delay(()=>{
+          setStop(true)
+        },1000)
       }
-    }, 6000)
+    }, 5000)
 
   };
 
