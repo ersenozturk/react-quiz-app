@@ -38,3 +38,32 @@
     justify-content: center;
     align-items: center;
 }
+
+.moneyItemUl {
+    list-style: none;
+    padding: 20px;
+    width: 100%;
+}
+
+.moneyItemLi { 
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.moneyItemLi.active{
+    background-color: teal;
+}
+
+.moneyItemLiNumber{
+    width: 30%;
+    font-size: 18px;
+    font-weight: 100;
+    margin-left: 15px;
+}
+
+.moneyItemLiAmount{
+    font-size: 20px;
+    font-weight: 300;
+}

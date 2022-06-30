@@ -2,7 +2,7 @@ import React from "react";
 import Timer from "../timer/Timer";
 import Question from "../question/Question";
 import Answer from "../answer/Answer";
-import styles from './Main.module.css'
+import styles from "./Main.module.css";
 import { moneyList } from "../data";
 
 const Main = () => {
@@ -18,13 +18,17 @@ const Main = () => {
         </div>
       </main>
       <div className={styles.pyramide}>
-        <ul>
-        {
-          moneyList.map((eachMoneyItem)=>(
-            // <li key={eachMoneyItem.id}><span>{eachMoneyItem.id}</span> <p>{eachMoneyItem.amount}</p> </li>
-            <li key={eachMoneyItem.id}><span>{eachMoneyItem.id}</span></li>
-            ))
-        }
+        <ul className={styles.moneyItemUl}>
+          {moneyList.map((eachMoneyItem) => (
+            <li className={styles.moneyItemLi} key={eachMoneyItem.id}>
+              <p className={styles.moneyItemLiNumber}>
+                {eachMoneyItem.id}
+              </p>{" "}
+              <p className={styles.moneyItemLiAmount}>
+              {eachMoneyItem.amount}
+              </p>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
