@@ -1,0 +1,18 @@
+.timerCompDiv{
+    position: relative;
+}
+
+.timerCompP {
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 80px;
+    left: 80px;
+    font-size: 30px;
+    font-weight: 700;
+}
